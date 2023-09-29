@@ -3217,6 +3217,6 @@ classes = (
     BatchRenameAction,
     WM_OT_batch_rename,
     WM_MT_splash_quick_setup,
-    WM_MT_splash,
+    #WM_MT_splash,
     WM_MT_splash_about,
 )
