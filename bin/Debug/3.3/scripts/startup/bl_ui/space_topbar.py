@@ -576,43 +576,43 @@ class TOPBAR_MT_edit(Menu):
         show_developer = context.preferences.view.show_developer_ui
 
         layout.operator("ed.undo")
-        layout.operator("ed.redo")
+        #layout.operator("ed.redo")
 
         layout.separator()
 
-        layout.menu("TOPBAR_MT_undo_history")
+        #layout.menu("TOPBAR_MT_undo_history")
 
-        layout.separator()
+        #layout.separator()
 
-        layout.operator("screen.repeat_last")
-        layout.operator("screen.repeat_history", text="Repeat History...")
+        #layout.operator("screen.repeat_last")
+        #layout.operator("screen.repeat_history", text="Repeat History...")
 
-        layout.separator()
+        #layout.separator()
 
-        layout.operator("screen.redo_last", text="Adjust Last Operation...")
+        #layout.operator("screen.redo_last", text="Adjust Last Operation...")
 
-        layout.separator()
+        #layout.separator()
 
-        layout.operator("wm.search_menu", text="Menu Search...", icon='VIEWZOOM')
-        if show_developer:
-            layout.operator("wm.search_operator", text="Operator Search...", icon='VIEWZOOM')
-
-        layout.separator()
+        #layout.operator("wm.search_menu", text="Menu Search...", icon='VIEWZOOM')
+        # if show_developer:
+        #     layout.operator("wm.search_operator", text="Operator Search...", icon='VIEWZOOM')
+        #
+        # layout.separator()
 
         # Mainly to expose shortcut since this depends on the context.
-        props = layout.operator("wm.call_panel", text="Rename Active Item...")
-        props.name = "TOPBAR_PT_name"
-        props.keep_open = False
-
-        layout.operator("wm.batch_rename", text="Batch Rename...")
-
-        layout.separator()
-
-        # Should move elsewhere (impacts outliner & 3D view).
-        tool_settings = context.tool_settings
-        layout.prop(tool_settings, "lock_object_mode")
-
-        layout.separator()
+        # props = layout.operator("wm.call_panel", text="Rename Active Item...")
+        # props.name = "TOPBAR_PT_name"
+        # props.keep_open = False
+        #
+        # layout.operator("wm.batch_rename", text="Batch Rename...")
+        #
+        # layout.separator()
+        #
+        # # Should move elsewhere (impacts outliner & 3D view).
+        # tool_settings = context.tool_settings
+        # layout.prop(tool_settings, "lock_object_mode")
+        #
+        # layout.separator()
 
         layout.operator("screen.userpref_show",
                         text="Preferences...", icon='PREFERENCES')
