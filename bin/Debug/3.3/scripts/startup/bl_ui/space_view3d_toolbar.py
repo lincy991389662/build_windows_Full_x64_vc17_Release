@@ -2359,7 +2359,7 @@ classes = (
 
     VIEW3D_PT_slots_projectpaint,
     VIEW3D_PT_slots_paint_canvas,
-    VIEW3D_PT_tools_brush_select,
+    # VIEW3D_PT_tools_brush_select,
     VIEW3D_PT_tools_brush_settings,
     VIEW3D_PT_tools_brush_color,
     VIEW3D_PT_tools_brush_swatches,
@@ -2381,8 +2381,8 @@ classes = (
     VIEW3D_PT_sculpt_voxel_remesh,
     VIEW3D_PT_sculpt_symmetry,
     VIEW3D_PT_sculpt_symmetry_for_topbar,
-    VIEW3D_PT_sculpt_options,
-    VIEW3D_PT_sculpt_options_gravity,
+    # VIEW3D_PT_sculpt_options,
+    # VIEW3D_PT_sculpt_options_gravity,
 
     VIEW3D_PT_curves_sculpt_symmetry,
     VIEW3D_PT_curves_sculpt_symmetry_for_topbar,

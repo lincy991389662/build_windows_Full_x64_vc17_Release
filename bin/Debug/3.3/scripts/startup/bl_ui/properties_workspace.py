@@ -96,7 +96,7 @@ class WORKSPACE_PT_custom_props(WorkSpaceButtonsPanel, PropertyPanel, Panel):
 
 
 classes = (
-    WORKSPACE_PT_main,
+    # WORKSPACE_PT_main,
     WORKSPACE_PT_addons,
     WORKSPACE_PT_custom_props,
 )
