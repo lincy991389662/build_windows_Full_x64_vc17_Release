@@ -580,94 +580,94 @@ class VIEW3D_HT_header(Header):
         scene = context.scene
 
         # Orientation
-        if object_mode in {'OBJECT', 'EDIT', 'EDIT_GPENCIL'} or has_pose_mode:
-            orient_slot = scene.transform_orientation_slots[0]
-            row = layout.row(align=True)
-
-            sub = row.row()
-            sub.ui_units_x = 4
-            sub.prop_with_popover(
-                orient_slot,
-                "type",
-                text="",
-                panel="VIEW3D_PT_transform_orientations",
-            )
+        # if object_mode in {'OBJECT', 'EDIT', 'EDIT_GPENCIL'} or has_pose_mode:
+        #     orient_slot = scene.transform_orientation_slots[0]
+        #     row = layout.row(align=True)
+        #
+        #     sub = row.row()
+        #     sub.ui_units_x = 4
+        #     sub.prop_with_popover(
+        #         orient_slot,
+        #         "type",
+        #         text="",
+        #         panel="VIEW3D_PT_transform_orientations",
+        #     )
 
         # Pivot
-        if object_mode in {'OBJECT', 'EDIT', 'EDIT_GPENCIL', 'SCULPT_GPENCIL'} or has_pose_mode:
-            layout.prop(tool_settings, "transform_pivot_point", text="", icon_only=True)
+        # if object_mode in {'OBJECT', 'EDIT', 'EDIT_GPENCIL', 'SCULPT_GPENCIL'} or has_pose_mode:
+        #     layout.prop(tool_settings, "transform_pivot_point", text="", icon_only=True)
 
         # Snap
-        show_snap = False
-        if obj is None:
-            show_snap = True
-        else:
-            if (object_mode not in {
-                    'SCULPT', 'SCULPT_CURVES', 'VERTEX_PAINT', 'WEIGHT_PAINT', 'TEXTURE_PAINT',
-                    'PAINT_GPENCIL', 'SCULPT_GPENCIL', 'WEIGHT_GPENCIL', 'VERTEX_GPENCIL',
-            }) or has_pose_mode:
-                show_snap = True
-            else:
-
-                paint_settings = UnifiedPaintPanel.paint_settings(context)
-
-                if paint_settings:
-                    brush = paint_settings.brush
-                    if brush and hasattr(brush, "stroke_method") and brush.stroke_method == 'CURVE':
-                        show_snap = True
-
-        if show_snap:
-            snap_items = bpy.types.ToolSettings.bl_rna.properties["snap_elements"].enum_items
-            snap_elements = tool_settings.snap_elements
-            if len(snap_elements) == 1:
-                text = ""
-                for elem in snap_elements:
-                    icon = snap_items[elem].icon
-                    break
-            else:
-                text = "Mix"
-                icon = 'NONE'
-            del snap_items, snap_elements
-
-            row = layout.row(align=True)
-            row.prop(tool_settings, "use_snap", text="")
-
-            sub = row.row(align=True)
-            sub.popover(
-                panel="VIEW3D_PT_snapping",
-                icon=icon,
-                text=text,
-            )
+        # show_snap = False
+        # if obj is None:
+        #     show_snap = True
+        # else:
+        #     if (object_mode not in {
+        #             'SCULPT', 'SCULPT_CURVES', 'VERTEX_PAINT', 'WEIGHT_PAINT', 'TEXTURE_PAINT',
+        #             'PAINT_GPENCIL', 'SCULPT_GPENCIL', 'WEIGHT_GPENCIL', 'VERTEX_GPENCIL',
+        #     }) or has_pose_mode:
+        #         show_snap = True
+        #     else:
+        #
+        #         paint_settings = UnifiedPaintPanel.paint_settings(context)
+        #
+        #         if paint_settings:
+        #             brush = paint_settings.brush
+        #             if brush and hasattr(brush, "stroke_method") and brush.stroke_method == 'CURVE':
+        #                 show_snap = True
+        #
+        # if show_snap:
+        #     snap_items = bpy.types.ToolSettings.bl_rna.properties["snap_elements"].enum_items
+        #     snap_elements = tool_settings.snap_elements
+        #     if len(snap_elements) == 1:
+        #         text = ""
+        #         for elem in snap_elements:
+        #             icon = snap_items[elem].icon
+        #             break
+        #     else:
+        #         text = "Mix"
+        #         icon = 'NONE'
+        #     del snap_items, snap_elements
+        #
+        #     row = layout.row(align=True)
+        #     row.prop(tool_settings, "use_snap", text="")
+        #
+        #     sub = row.row(align=True)
+        #     sub.popover(
+        #         panel="VIEW3D_PT_snapping",
+        #         icon=icon,
+        #         text=text,
+        #     )
 
         # Proportional editing
-        if object_mode in {'EDIT', 'PARTICLE_EDIT', 'SCULPT_GPENCIL', 'EDIT_GPENCIL', 'OBJECT'}:
-            row = layout.row(align=True)
-            kw = {}
-            if object_mode == 'OBJECT':
-                attr = "use_proportional_edit_objects"
-            else:
-                attr = "use_proportional_edit"
-
-                if tool_settings.use_proportional_edit:
-                    if tool_settings.use_proportional_connected:
-                        kw["icon"] = 'PROP_CON'
-                    elif tool_settings.use_proportional_projected:
-                        kw["icon"] = 'PROP_PROJECTED'
-                    else:
-                        kw["icon"] = 'PROP_ON'
-                else:
-                    kw["icon"] = 'PROP_OFF'
-
-            row.prop(tool_settings, attr, icon_only=True, **kw)
-            sub = row.row(align=True)
-            sub.active = getattr(tool_settings, attr)
-            sub.prop_with_popover(
-                tool_settings,
-                "proportional_edit_falloff",
-                text="",
-                icon_only=True,
-                panel="VIEW3D_PT_proportional_edit",
-            )
+        # if object_mode in {'EDIT', 'PARTICLE_EDIT', 'SCULPT_GPENCIL', 'EDIT_GPENCIL', 'OBJECT'}:
+        #     row = layout.row(align=True)
+        #     kw = {}
+        #     if object_mode == 'OBJECT':
+        #         attr = "use_proportional_edit_objects"
+        #     else:
+        #         attr = "use_proportional_edit"
+        #
+        #         if tool_settings.use_proportional_edit:
+        #             if tool_settings.use_proportional_connected:
+        #                 kw["icon"] = 'PROP_CON'
+        #             elif tool_settings.use_proportional_projected:
+        #                 kw["icon"] = 'PROP_PROJECTED'
+        #             else:
+        #                 kw["icon"] = 'PROP_ON'
+        #         else:
+        #             kw["icon"] = 'PROP_OFF'
+        #
+        #     row.prop(tool_settings, attr, icon_only=True, **kw)
+        #     sub = row.row(align=True)
+        #     sub.active = getattr(tool_settings, attr)
+        #     sub.prop_with_popover(
+        #         tool_settings,
+        #         "proportional_edit_falloff",
+        #         text="",
+        #         icon_only=True,
+        #         panel="VIEW3D_PT_proportional_edit",
+        #     )
 
     def draw(self, context):
         layout = self.layout
