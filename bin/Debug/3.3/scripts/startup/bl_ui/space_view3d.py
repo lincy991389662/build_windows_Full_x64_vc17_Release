@@ -2659,30 +2659,30 @@ class VIEW3D_MT_object_context_menu(Menu):
         if obj is not None:
             if obj.type in {'MESH', 'CURVE', 'SURFACE'}:
                 layout.operator("object.shade_smooth")
-                layout.operator("object.shade_smooth", text="Shade Auto Smooth").use_auto_smooth = True
+                # layout.operator("object.shade_smooth", text="Shade Auto Smooth").use_auto_smooth = True
                 layout.operator("object.shade_flat", text="Shade Flat")
 
                 layout.separator()
 
-            if obj.type in {'MESH', 'CURVE', 'SURFACE', 'ARMATURE', 'GPENCIL'}:
-                if selected_objects_len > 1:
-                    layout.operator("object.join")
-
-            if obj.type in {'MESH', 'CURVE', 'SURFACE', 'POINTCLOUD', 'META', 'FONT'}:
-                layout.operator_menu_enum("object.convert", "target")
-
-            if obj.type == 'GPENCIL':
-                layout.operator_menu_enum("gpencil.convert", "type", text="Convert To")
-
-            if (
-                    obj.type in {'MESH', 'CURVE', 'SURFACE', 'GPENCIL', 'LATTICE', 'ARMATURE', 'META', 'FONT'} or
-                    (obj.type == 'EMPTY' and obj.instance_collection is not None)
-            ):
-                layout.operator_context = 'INVOKE_REGION_WIN'
-                layout.operator_menu_enum("object.origin_set", text="Set Origin", property="type")
-                layout.operator_context = 'INVOKE_DEFAULT'
-
-                layout.separator()
+            # if obj.type in {'MESH', 'CURVE', 'SURFACE', 'ARMATURE', 'GPENCIL'}:
+            #     if selected_objects_len > 1:
+            #         layout.operator("object.join")
+            #
+            # if obj.type in {'MESH', 'CURVE', 'SURFACE', 'POINTCLOUD', 'META', 'FONT'}:
+            #     layout.operator_menu_enum("object.convert", "target")
+            #
+            # if obj.type == 'GPENCIL':
+            #     layout.operator_menu_enum("gpencil.convert", "type", text="Convert To")
+            #
+            # if (
+            #         obj.type in {'MESH', 'CURVE', 'SURFACE', 'GPENCIL', 'LATTICE', 'ARMATURE', 'META', 'FONT'} or
+            #         (obj.type == 'EMPTY' and obj.instance_collection is not None)
+            # ):
+            #     layout.operator_context = 'INVOKE_REGION_WIN'
+            #     layout.operator_menu_enum("object.origin_set", text="Set Origin", property="type")
+            #     layout.operator_context = 'INVOKE_DEFAULT'
+            #
+            #     layout.separator()
 
         # Shared among all object types
         layout.operator("view3d.copybuffer", text="Copy Objects", icon='COPYDOWN')
@@ -2690,35 +2690,35 @@ class VIEW3D_MT_object_context_menu(Menu):
 
         layout.separator()
 
-        layout.operator("object.duplicate_move", icon='DUPLICATE')
-        layout.operator("object.duplicate_move_linked")
+        # layout.operator("object.duplicate_move", icon='DUPLICATE')
+        # layout.operator("object.duplicate_move_linked")
+        #
+        # layout.separator()
 
-        layout.separator()
+        # props = layout.operator("wm.call_panel", text="Rename Active Object...")
+        # props.name = "TOPBAR_PT_name"
+        # props.keep_open = False
+        #
+        # layout.separator()
 
-        props = layout.operator("wm.call_panel", text="Rename Active Object...")
-        props.name = "TOPBAR_PT_name"
-        props.keep_open = False
-
-        layout.separator()
-
-        layout.menu("VIEW3D_MT_mirror")
-        layout.menu("VIEW3D_MT_snap")
-        layout.menu("VIEW3D_MT_object_parent")
-        layout.operator_context = 'INVOKE_REGION_WIN'
-
-        if view and view.local_view:
-            layout.operator("view3d.localview_remove_from")
-        else:
-            layout.operator("object.move_to_collection")
-
-        layout.separator()
-
-        layout.operator("anim.keyframe_insert_menu", text="Insert Keyframe...")
-
-        layout.separator()
-
-        layout.operator_context = 'EXEC_REGION_WIN'
-        layout.operator("object.delete", text="Delete").use_global = False
+        # layout.menu("VIEW3D_MT_mirror")
+        # layout.menu("VIEW3D_MT_snap")
+        # layout.menu("VIEW3D_MT_object_parent")
+        # layout.operator_context = 'INVOKE_REGION_WIN'
+        #
+        # if view and view.local_view:
+        #     layout.operator("view3d.localview_remove_from")
+        # else:
+        #     layout.operator("object.move_to_collection")
+        #
+        # layout.separator()
+        #
+        # layout.operator("anim.keyframe_insert_menu", text="Insert Keyframe...")
+        #
+        # layout.separator()
+        #
+        # layout.operator_context = 'EXEC_REGION_WIN'
+        # layout.operator("object.delete", text="Delete").use_global = False
 
 
 class VIEW3D_MT_object_shading(Menu):
@@ -7849,7 +7849,7 @@ classes = (
     # VIEW3D_MT_object_asset,
     # VIEW3D_MT_object_rigid_body,
     # VIEW3D_MT_object_clear,
-    # VIEW3D_MT_object_context_menu,
+    VIEW3D_MT_object_context_menu,
     # VIEW3D_MT_object_convert,
     # VIEW3D_MT_object_shading,
     # VIEW3D_MT_object_apply,
