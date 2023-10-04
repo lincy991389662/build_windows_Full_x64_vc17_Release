@@ -290,7 +290,7 @@ class IMAGE_MT_uvs_transform(Menu):
 
         layout.separator()
 
-        layout.operator("transform.shear")
+        # layout.operator("transform.shear")
 
 
 class IMAGE_MT_uvs_snap(Menu):
