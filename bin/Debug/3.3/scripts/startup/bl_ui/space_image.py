@@ -370,19 +370,19 @@ class IMAGE_MT_uvs_unwrap(Menu):
 
         layout.operator("uv.unwrap")
 
-        # layout.separator()
-        #
-        # layout.operator_context = 'INVOKE_DEFAULT'
-        # layout.operator("uv.smart_project")
-        # layout.operator("uv.lightmap_pack")
-        # layout.operator("uv.follow_active_quads")
-        #
-        # layout.separator()
-        #
-        # layout.operator_context = 'EXEC_REGION_WIN'
-        # layout.operator("uv.cube_project")
-        # layout.operator("uv.cylinder_project")
-        # layout.operator("uv.sphere_project")
+        layout.separator()
+
+        layout.operator_context = 'INVOKE_DEFAULT'
+        layout.operator("uv.smart_project")
+        layout.operator("uv.lightmap_pack")
+        layout.operator("uv.follow_active_quads")
+
+        layout.separator()
+
+        layout.operator_context = 'EXEC_REGION_WIN'
+        layout.operator("uv.cube_project")
+        layout.operator("uv.cylinder_project")
+        layout.operator("uv.sphere_project")
 
 
 class IMAGE_MT_uvs(Menu):
@@ -395,51 +395,51 @@ class IMAGE_MT_uvs(Menu):
         uv = sima.uv_editor
 
         layout.menu("IMAGE_MT_uvs_transform")
-        layout.menu("IMAGE_MT_uvs_mirror")
-        layout.menu("IMAGE_MT_uvs_snap")
-
-        layout.prop_menu_enum(uv, "pixel_snap_mode")
-        layout.prop(uv, "lock_bounds")
-
-        layout.separator()
-
-        layout.menu("IMAGE_MT_uvs_merge")
-        layout.menu("IMAGE_MT_uvs_split")
-
-        layout.separator()
-
-        layout.prop(uv, "use_live_unwrap")
+        # layout.menu("IMAGE_MT_uvs_mirror")
+        # layout.menu("IMAGE_MT_uvs_snap")
+        #
+        # layout.prop_menu_enum(uv, "pixel_snap_mode")
+        # layout.prop(uv, "lock_bounds")
+        #
+        # layout.separator()
+        #
+        # layout.menu("IMAGE_MT_uvs_merge")
+        # layout.menu("IMAGE_MT_uvs_split")
+        #
+        # layout.separator()
+        #
+        # layout.prop(uv, "use_live_unwrap")
         layout.menu("IMAGE_MT_uvs_unwrap")
 
-        layout.separator()
-
-        layout.operator("uv.pin").clear = False
-        layout.operator("uv.pin", text="Unpin").clear = True
-
-        layout.separator()
-
-        layout.operator("uv.mark_seam").clear = False
-        layout.operator("uv.mark_seam", text="Clear Seam").clear = True
-        layout.operator("uv.seams_from_islands")
-
-        layout.separator()
-
-        layout.operator("uv.pack_islands")
-        layout.operator("uv.average_islands_scale")
-
-        layout.separator()
-
-        layout.operator("uv.minimize_stretch")
-        layout.operator("uv.stitch")
-        layout.menu("IMAGE_MT_uvs_align")
-
-        layout.separator()
-
-        layout.menu("IMAGE_MT_uvs_showhide")
-
-        layout.separator()
-
-        layout.operator("uv.reset")
+        # layout.separator()
+        #
+        # layout.operator("uv.pin").clear = False
+        # layout.operator("uv.pin", text="Unpin").clear = True
+        #
+        # layout.separator()
+        #
+        # layout.operator("uv.mark_seam").clear = False
+        # layout.operator("uv.mark_seam", text="Clear Seam").clear = True
+        # layout.operator("uv.seams_from_islands")
+        #
+        # layout.separator()
+        #
+        # layout.operator("uv.pack_islands")
+        # layout.operator("uv.average_islands_scale")
+        #
+        # layout.separator()
+        #
+        # layout.operator("uv.minimize_stretch")
+        # layout.operator("uv.stitch")
+        # layout.menu("IMAGE_MT_uvs_align")
+        #
+        # layout.separator()
+        #
+        # layout.menu("IMAGE_MT_uvs_showhide")
+        #
+        # layout.separator()
+        #
+        # layout.operator("uv.reset")
 
         layout.separator()
 
@@ -1663,11 +1663,11 @@ classes = (
     IMAGE_MT_uvs,
     IMAGE_MT_uvs_showhide,
     IMAGE_MT_uvs_transform,
-    IMAGE_MT_uvs_snap,
-    IMAGE_MT_uvs_mirror,
-    IMAGE_MT_uvs_align,
-    IMAGE_MT_uvs_merge,
-    IMAGE_MT_uvs_split,
+    # IMAGE_MT_uvs_snap,
+    # IMAGE_MT_uvs_mirror,
+    # IMAGE_MT_uvs_align,
+    # IMAGE_MT_uvs_merge,
+    # IMAGE_MT_uvs_split,
     IMAGE_MT_uvs_unwrap,
     IMAGE_MT_uvs_select_mode,
     IMAGE_MT_uvs_context_menu,
