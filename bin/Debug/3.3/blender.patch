@@ -1,0 +1,24 @@
+diff --git a/doc/python_api/static/favicon.ico b/doc/python_api/static/favicon.ico
+index f125d24dcb6..5badce60185 100644
+Binary files a/doc/python_api/static/favicon.ico and b/doc/python_api/static/favicon.ico differ
+diff --git a/release/windows/icons/winblender.ico b/release/windows/icons/winblender.ico
+index e6bf58581a2..5badce60185 100644
+Binary files a/release/windows/icons/winblender.ico and b/release/windows/icons/winblender.ico differ
+diff --git a/release/windows/icons/winblenderfile.ico b/release/windows/icons/winblenderfile.ico
+index c267d8c3d58..5badce60185 100644
+Binary files a/release/windows/icons/winblenderfile.ico and b/release/windows/icons/winblenderfile.ico differ
+diff --git a/source/blender/windowmanager/intern/wm_operators.c b/source/blender/windowmanager/intern/wm_operators.c
+index 1dc2307ba14..fb600320974 100644
+--- a/source/blender/windowmanager/intern/wm_operators.c
++++ b/source/blender/windowmanager/intern/wm_operators.c
+@@ -3760,8 +3760,8 @@ void wm_operatortypes_register(void)
+   WM_operatortype_append(WM_OT_memory_statistics);
+   WM_operatortype_append(WM_OT_debug_menu);
+   WM_operatortype_append(WM_OT_operator_defaults);
+-  WM_operatortype_append(WM_OT_splash);
+-  WM_operatortype_append(WM_OT_splash_about);
++  //WM_operatortype_append(WM_OT_splash);
++  //WM_operatortype_append(WM_OT_splash_about);
+   WM_operatortype_append(WM_OT_search_menu);
+   WM_operatortype_append(WM_OT_search_operator);
+   WM_operatortype_append(WM_OT_call_menu);
