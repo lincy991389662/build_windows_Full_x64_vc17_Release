@@ -290,7 +290,7 @@ class IMAGE_MT_uvs_transform(Menu):
 
         layout.separator()
 
-        # layout.operator("transform.shear")
+        layout.operator("transform.shear")
 
 
 class IMAGE_MT_uvs_snap(Menu):
@@ -395,51 +395,51 @@ class IMAGE_MT_uvs(Menu):
         uv = sima.uv_editor
 
         layout.menu("IMAGE_MT_uvs_transform")
-        # layout.menu("IMAGE_MT_uvs_mirror")
-        # layout.menu("IMAGE_MT_uvs_snap")
-        #
-        # layout.prop_menu_enum(uv, "pixel_snap_mode")
-        # layout.prop(uv, "lock_bounds")
-        #
-        # layout.separator()
-        #
-        # layout.menu("IMAGE_MT_uvs_merge")
-        # layout.menu("IMAGE_MT_uvs_split")
-        #
-        # layout.separator()
-        #
-        # layout.prop(uv, "use_live_unwrap")
+        layout.menu("IMAGE_MT_uvs_mirror")
+        layout.menu("IMAGE_MT_uvs_snap")
+
+        layout.prop_menu_enum(uv, "pixel_snap_mode")
+        layout.prop(uv, "lock_bounds")
+
+        layout.separator()
+
+        layout.menu("IMAGE_MT_uvs_merge")
+        layout.menu("IMAGE_MT_uvs_split")
+
+        layout.separator()
+
+        layout.prop(uv, "use_live_unwrap")
         layout.menu("IMAGE_MT_uvs_unwrap")
 
-        # layout.separator()
-        #
-        # layout.operator("uv.pin").clear = False
-        # layout.operator("uv.pin", text="Unpin").clear = True
-        #
-        # layout.separator()
-        #
-        # layout.operator("uv.mark_seam").clear = False
-        # layout.operator("uv.mark_seam", text="Clear Seam").clear = True
-        # layout.operator("uv.seams_from_islands")
-        #
-        # layout.separator()
-        #
-        # layout.operator("uv.pack_islands")
-        # layout.operator("uv.average_islands_scale")
-        #
-        # layout.separator()
-        #
-        # layout.operator("uv.minimize_stretch")
-        # layout.operator("uv.stitch")
-        # layout.menu("IMAGE_MT_uvs_align")
-        #
-        # layout.separator()
-        #
-        # layout.menu("IMAGE_MT_uvs_showhide")
-        #
-        # layout.separator()
-        #
-        # layout.operator("uv.reset")
+        layout.separator()
+
+        layout.operator("uv.pin").clear = False
+        layout.operator("uv.pin", text="Unpin").clear = True
+
+        layout.separator()
+
+        layout.operator("uv.mark_seam").clear = False
+        layout.operator("uv.mark_seam", text="Clear Seam").clear = True
+        layout.operator("uv.seams_from_islands")
+
+        layout.separator()
+
+        layout.operator("uv.pack_islands")
+        layout.operator("uv.average_islands_scale")
+
+        layout.separator()
+
+        layout.operator("uv.minimize_stretch")
+        layout.operator("uv.stitch")
+        layout.menu("IMAGE_MT_uvs_align")
+
+        layout.separator()
+
+        layout.menu("IMAGE_MT_uvs_showhide")
+
+        layout.separator()
+
+        layout.operator("uv.reset")
 
         layout.separator()
 
