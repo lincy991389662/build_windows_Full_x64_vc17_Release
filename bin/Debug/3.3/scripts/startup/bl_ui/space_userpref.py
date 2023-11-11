@@ -1431,7 +1431,7 @@ class SaveLoadPanel:
 
 
 class USERPREF_PT_saveload_blend(SaveLoadPanel, CenterAlignMixIn, Panel):
-    bl_label = "Blend Files"
+    bl_label = "Stone Chisel Digital Simulation Software Files"
 
     def draw_centered(self, context, layout):
         prefs = context.preferences
